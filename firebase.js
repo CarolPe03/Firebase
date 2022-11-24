@@ -17,7 +17,12 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  // Put you credentials here
+  apiKey: "AIzaSyBWAvG4Ba7Xl5T2m4zl8JqWrs6CJrek3jg",
+  authDomain: "fir-crud-b319c.firebaseapp.com",
+  projectId: "fir-crud-b319c",
+  storageBucket: "fir-crud-b319c.appspot.com",
+  messagingSenderId: "606076225751",
+  appId: "1:606076225751:web:08993ee626214f79ca4892"
 };
 
 // Initialize Firebase
@@ -36,15 +41,3 @@ export const saveTask = (title, description) =>
 export const onGetTasks = (callback) =>
   onSnapshot(collection(db, "tasks"), callback);
 
-/**
- *
- * @param {string} id Task ID
- */
-export const deleteTask = (id) => deleteDoc(doc(db, "tasks", id));
-
-export const getTask = (id) => getDoc(doc(db, "tasks", id));
-
-export const updateTask = (id, newFields) =>
-  updateDoc(doc(db, "tasks", id), newFields);
-
-export const getTasks = () => getDocs(collection(db, "tasks"));
